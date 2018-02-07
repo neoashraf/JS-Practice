@@ -116,3 +116,16 @@ setupSomeGlobals();
 gLogNumber(); // 42
 
 oldLog(); // 5
+
+
+
+
+var gLogNumber, gIncreaseNumber, gSetNumber;
+
+function setupSomeGlobals(){
+	var num = 421;
+	gLogNumber = function() {console.log(num)};
+	gIncreaseNumber =  function() {num++};
+	gSetNumber = function(x) {num = x};
+}
+
