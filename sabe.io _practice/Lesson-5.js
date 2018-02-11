@@ -20,3 +20,11 @@ console.log(euler);
 
 // Math methods
 
+function randomBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1));
+}
+var random = randomBetween(5, 25);
+console.log("The value of random is " + random + ".");
+
+
+
