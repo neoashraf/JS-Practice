@@ -1,0 +1,75 @@
+<!-- Getting Element  -->
+
+<!-- <html>
+	<head>
+		<title>querySelector</title>
+	</head>
+	<body>
+		<div class="apple">Apples taste good.</div>
+		<div id="pears">Pears also taste good.</div>
+		<span>Some like it hot.</span>
+
+		<div class="fruit">Apples taste good.</div>
+        <div class="fruit">Pears also taste good.</div>
+        <div class="fruit">Same goes with oranges.</div>
+
+		<script type="text/javascript">
+			// Getting a single element. 
+			var apple = document.querySelector(".apple");
+			var pears = document.querySelector("#pears");
+			var span = document.querySelector("span");
+			console.log(apple);
+			console.log(pears);
+			console.log(span);
+			// Getting all elements.
+			var fruit = document.querySelectorAll("div");  // gets all the div (5)
+			var fruit = document.querySelectorAll(".fruit");  // gets all the fruit class
+			console.log(fruit);
+		</script>
+	</body>
+</html> -->
+
+<!-- Creating Element -->
+
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<title>Creating Element</title>
+		<style type="text/css">
+			.date{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<span>Today is </span>
+		<script>
+			var span = document.createElement("span");
+			span.setAttribute("class","date");
+			span.textContent = new Date().toDateString();
+			document.body.appendChild(span);
+		</script>
+	</body>
+</html> -->
+
+<!--Removing Element -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing Element</title>
+</head>
+<body>
+	<div class = "parent">
+		<span id = "kid1">I am a kid1 that will be removed.</span>
+		<span id = "kid2">I am a kid2 that will be removed.</span>
+	</div>
+	<script type="text/javascript">
+		var parent = document.querySelector(".parent"); 
+		var kid1 = document.querySelector("#kid1");
+		var kid2 = document.querySelector("#kid2");
+		parent.removeChild(kid1);
+		kid2.parentNode.removeChild(kid2);
+	</script>
+</body>
+</html>
