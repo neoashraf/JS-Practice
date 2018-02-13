@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click Event Listener</title>
+</head>
+<body>
+	<button id="button">Click here for a console log!</button>
+	<script type="text/javascript">
+
+		var button = document.querySelector("#button");
+
+		var clickCallback = function(event){
+			console.log("You've clicked the button.");
+			console.log(event);
+		}
+		button.addEventListener("click",clickCallback);
+
+	
+		var mouseOverCallback = function(event){
+			console.log("You've hovered over the button.");
+			console.log(event);
+		}
+		button.addEventListener("mouseover",mouseOverCallback );
+
+
+		var mouseOutCallback  = function(event){
+			console.log("You've hovered out of the button.");
+			console.log(event);
+		}
+		button.addEventListener("mouseout",mouseOutCallback);
+
+		var mouseMoveCallback  = function(event){
+			console.log("You are moving on the button.");
+			console.log(event);
+		}
+		button.addEventListener("mousemove",mouseMoveCallback);
+
+	</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inline Click Event Listener.</title>
+</head>
+<body>
+	<button id ="button" onclick = "clickCallback()">Click</button>
+	<script type="text/javascript">
+		function clickCallback(event) {
+			// body...
+			console.log("You clicked.");
+			//console.log(event);
+		}
+	</script>
+</body>
+</html>
