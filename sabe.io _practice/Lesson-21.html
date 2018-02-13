@@ -1,0 +1,122 @@
+<!--   <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Creating a Cookie</title>
+        </head>
+        <body>
+            <script>
+                  function createCookie(key, value) {
+                     var cookie = escape(key) + "=" + escape(value) + ";";
+                     document.cookie = cookie;
+                     console.log(cookie);
+                     console.log("Creating new cookie with key: " + key + " value: " + value);
+                  }
+                  createCookie("sport", "basketball");
+                  createCookie("icecream", "vanilla");
+            </script>
+        </body>
+    </html>
+	 -->
+
+<!-- 	 <!DOCTYPE html>
+	 <html>
+	 <head>
+	 	<title>Expiration Time for cookie</title>
+	 </head>
+	 <body>
+	 	<script type="text/javascript">
+	 		function createCookie(key,value,date){
+	 			var expiration = new Date(date).toUTCString();
+	 			var cookie = escape(key) + "="+escape(value) + "; expires on:"+expiration;
+	 			document.cookie = cookie;
+	 			console.log(cookie);
+	 			console.log("Creating new cookie with key: " + key + " value: " + value + " expiration: " +expiration);
+	 		}
+	 		createCookie("sport", "basketball", Date.UTC(2017, 8, 1));
+    		createCookie("icecream", "vanilla", Date.UTC(2017, 8, 1));	 		
+	 	</script>
+	 </body>
+	 </html> -->
+
+
+
+	 <!DOCTYPE html>
+	 <html>
+	 <head>
+	 	<title>Read Cookie</title>
+	 </head>
+	 <body>
+	 	<script type="text/javascript">
+	 		function createCookie(key, value, date) {
+		       var expiration = new Date(date).toUTCString();
+		       console.log(expiration);
+		       var cookie = escape(key) + "=" + escape(value) + ";expires=" + expiration + ";";
+		       document.cookie = cookie;
+		       console.log(cookie);
+		       console.log("New cookie with key: " + key + " value: " + value + " expiration: " + expiration);
+		    }
+	    createCookie("sport", "basketball", Date.UTC(2017, 8, 1));
+	    createCookie("icecream", "vanilla", Date.UTC(2017, 8, 1));
+
+	    function readCookie(name) {
+	        var key = name + "=";
+	        var cookie = document.cookie.split(';');
+	        for (var i = 0; i < cookie.length; i++) {
+	            var c = cookie[i];
+	            while (c.charAt(0) === ' ') {
+	                c = c.substring(1, c.length);
+	            }
+	            if (c.indexOf(key) === 0) {
+	                return c.substring(key.length, c.length);
+	            }
+	        }
+	        return null;
+	    }
+
+
+	    console.log(readCookie("icecream"));
+	 	</script>
+	 </body>
+	 </html>
+
+
+	 <!DOCTYPE html>
+	 <html>
+	 <head>
+	 	<title>Read Cookie</title>
+	 </head>
+	 <body>
+	 	<script type="text/javascript">
+	 		function createCookie(key, value, date) {
+		       var expiration = new Date(date).toUTCString();
+		       console.log(expiration);
+		       var cookie = escape(key) + "=" + escape(value) + ";expires=" + expiration + ";";
+		       document.cookie = cookie;
+		       console.log(cookie);
+		       console.log("New cookie with key: " + key + " value: " + value + " expiration: " + expiration);
+		    }
+	    createCookie("sport", "basketball", Date.UTC(2017, 8, 1));
+	    createCookie("icecream", "vanilla", Date.UTC(2017, 8, 1));
+
+	    function readCookie(name) {
+	        var key = name + "=";
+	        var cookie = document.cookie.split(';');
+	        for (var i = 0; i < cookie.length; i++) {
+	            var c = cookie[i];
+	            while (c.charAt(0) === ' ') {
+	                c = c.substring(1, c.length);
+	            }
+	            if (c.indexOf(key) === 0) {
+	                return c.substring(key.length, c.length);
+	            }
+	        }
+	        return null;
+	    }
+
+	   function deleteCookie(name) {
+        createCookie(name, "", -1);
+    	}
+	    console.log(readCookie("icecream"));
+	    console.log(deleteCookie("icecream"));
+	 	</script>
+	 </body>
