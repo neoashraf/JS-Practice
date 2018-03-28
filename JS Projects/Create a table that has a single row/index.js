@@ -6,7 +6,7 @@ function generateARow(){
     table.setAttribute("id","aTable");
 
     var row =  document.createElement("TR");
-    document.getElementById("aTable").appendChild(row);  // adding into the dom
+    document.getElementById("aTable").appendChild(row);  // adding into the dom  here getElementById is used to append into the same element
     row.setAttribute("id","tableRow");
 
     var columns = document.createElement("TD");
@@ -26,3 +26,4 @@ function generateARow(){
     document.body.appendChild(para);
     
 }
+

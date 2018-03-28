@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            table,td{
+                border: 0.1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <script>
+            //create a form
+            var f = document.createElement("form");
+
+            //create input element
+            var label = document.createElement("label");
+            label.innerHTML = "Rows: ";
+            f.appendChild(label);
+
+            var r = document.createElement("input");
+            r.type = "text";
+            r.setAttribute("id","row");
+            f.appendChild(r);
+ 
+            //create input element
+            var label = document.createElement("label");
+            label.innerHTML = "Columns: ";
+            f.appendChild(label);
+
+            var c = document.createElement("input");
+            c.type = "text";
+            c.setAttribute("id","col");
+            f.appendChild(c);
+            
+            //create a button
+            var s = document.createElement("input");
+            s.type = "submit";
+            s.innerHTML = "Submit";                              
+            f.appendChild(s);
+            
+            document.getElementsByTagName('body')[0].appendChild(f); //pure javascript
+            
+            s.addEventListener ("click", function() {
+
+            });
+            
+            </script>
+    </body>
+</html>
