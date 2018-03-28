@@ -101,7 +101,7 @@ console.log(odd);
 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-var total = numbers.reduce(function(number){
+var total = numbers.reduce(function(total,number){
 	return total + number;
 });
 console.log(total);
