@@ -39,6 +39,24 @@
       <p id="actionConfirmation"></p>
     </div>
 
+    <!-- searchbar -->
+    <div class="input-group">
+      <input type="text" class="form-control pull-right" id="searchName" onkeyup="searchUser()" style="width: 100%; margin-right: 20px, "
+        placeholder="Search">
+      <span class="input-group-btn">
+        <button type="reset" class="btn btn-default">
+          <span class="glyphicon glyphicon-remove">
+            <span class="sr-only">Close</span>
+          </span>
+        </button>
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-search">
+            <span class="sr-only">Search</span>
+          </span>
+        </button>
+      </span>
+    </div>
+
     <!-- List the registered user info-->
     <table class="table table-striped">
       <thead>
@@ -52,26 +70,6 @@
           <th>Details</th>
           <th>Edit</th>
           <th>Delete</th>
-
-          <form class="navbar-form" role="search">
-            <div class="input-group">
-              <input type="text" class="form-control pull-right" id="searchName" onkeyup="searchUser()" style="width: 100%; margin-right: 20px, "
-                placeholder="Search">
-              <span class="input-group-btn">
-                <button type="reset" class="btn btn-default">
-                  <span class="glyphicon glyphicon-remove">
-                    <span class="sr-only">Close</span>
-                  </span>
-                </button>
-                <button type="submit" class="btn btn-default">
-                  <span class="glyphicon glyphicon-search">
-                    <span class="sr-only">Search</span>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </form>
-
         </tr>
       </thead>
       <tbody id="userList">
@@ -79,114 +77,111 @@
       </tbody>
     </table>
 
-  </div>
 
-  <!-- Modal Add new -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <!-- Modal Add new -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
+        <!-- Modal content-->
+        <div class="modal-content">
 
-        <!-- Header -->
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">New User Registration</h4>
-        </div>
+          <!-- Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><span id ="updateModalTitle"></span></h4>
+          </div>
 
-        <!-- Body -->
-        <div class="modal-body">
+          <!-- Body -->
+          <div class="modal-body">
 
-          <form class="form-horizontal">
+            <form class="form-horizontal">
 
-            <div class="form-group">
-              <label for="inputName" class="col-sm-2 control-label">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Name">
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputID" class="col-sm-2 control-label">Id</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputID" placeholder="ID">
+              <div class="form-group">
+                <label for="inputID" class="col-sm-2 control-label">Id</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputID" placeholder="ID">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="" class="col-sm-2 control-label">CGPA</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputCgpa" placeholder="CGPA">
+              <div class="form-group">
+                <label for="" class="col-sm-2 control-label">CGPA</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputCgpa" placeholder="CGPA">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputBirthDay" class="col-sm-2 control-label">Birth Day</label>
-              <div class="col-sm-10">
-                <input type="date" class="form-control" id="inputBirthDay" placeholder="Birth Day">
+              <div class="form-group">
+                <label for="inputBirthDay" class="col-sm-2 control-label">Birth Day</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="inputBirthDay" placeholder="Birth Day">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="inputcontactNumber" class="col-sm-2 control-label">Cell Number</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputcontactNumber" placeholder="Cell Number">
+              <div class="form-group">
+                <label for="inputcontactNumber" class="col-sm-2 control-label">Cell Number</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputcontactNumber" placeholder="Cell Number">
+                </div>
               </div>
-            </div>
 
-          </form>
+            </form>
 
-        </div>
+          </div>
 
 
-        <!-- Footer -->
-        <div class="modal-footer">
-          <!-- Cancel -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <!-- Save button          onclick="saveUser()"  -->
-          <button id="saveConfirmation" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+          <!-- Footer -->
+          <div class="modal-footer">
+            <!-- Cancel -->
+            <button id="cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <!-- Save button          onclick="saveUser()"  -->
+            <button id="updateConfirmation" type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+            <button id="saveConfirmation" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
 
       </div>
-
     </div>
-  </div>
 
+    <!-- Modal Delete -->
+    <div id="myDelModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
 
+          <!-- Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Are You Sure?</h4>
+          </div>
 
-  <!-- Modal Delete -->
-  <div id="myDelModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+          <!-- Body -->
+          <div class="modal-body">
+            <h3 style="color: red">You are going to delete user named "
+              <span id="wantToDelUser"></span>". All information will be deleted and can't be undone. </h3>
+            <br/>
+          </div>
 
-      <!-- Modal content-->
-      <div class="modal-content">
+          <!-- Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal" onclick="deleteUser()">Yes</button>
+            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">No</button>
+          </div>
 
-        <!-- Header -->
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Are You Sure?</h4>
-        </div>
-
-        <!-- Body -->
-        <div class="modal-body">
-          <h3 style="color: red">You are going to delete user named "
-            <span id="wantToDelUser"></span>". All information will be deleted and can't be undone. </h3>
-          <br/>
-        </div>
-
-        <!-- Footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal" onclick="deleteUser()">Yes</button>
-          <button type="button" class="btn btn-default pull-right" data-dismiss="modal">No</button>
         </div>
 
       </div>
-
     </div>
+
   </div>
-
-
 </body>
 
 </html>

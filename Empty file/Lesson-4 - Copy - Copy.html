@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>onblur event example</title>
+
+    <script type="text/javascript">
+
+        function doEvent(elem) {
+            console.log(elem.innerText);
+        }
+
+    </script>
+
+    <style type="text/css">
+        #foo {
+            border: solid blue 2px;
+        }
+    </style>
+
+</head>
+
+<body >
+    
+        <p contenteditable="true" id="foo" onblur="doEvent(this)">asdfasd</p>
+    
+
+    <p>Click on the above element to give it focus, then click outside the element.
+        <br /> Reload the page from the NavBar.</p>
+
+</body>
+
+</html>
