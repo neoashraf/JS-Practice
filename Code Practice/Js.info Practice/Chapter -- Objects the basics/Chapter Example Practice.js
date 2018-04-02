@@ -204,11 +204,9 @@ clone.name = "Pete"; // changed the data in it
 console.log(user);   
 console.log(clone);   
 
+// clone the object 
 var objects = [{ 'a': 1 }, { 'b': 2 }];			
 var deep = _.cloneDeep(objects);     // have to add lodash script
 console.log(deep[0] === objects[0]);
 // => false
-
-
-
 
