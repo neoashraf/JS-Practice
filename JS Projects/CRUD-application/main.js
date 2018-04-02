@@ -97,7 +97,6 @@ function editUser(key) {
 
 }
 
-
 function viewUser(key){
 	updateModalTitle.innerHTML = "User Details";
 	console.log("view");
@@ -138,7 +137,6 @@ function searchUser(){
 	}
 
 }
-
 
 
 function fetchUsers(){
