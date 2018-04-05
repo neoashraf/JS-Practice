@@ -16,7 +16,14 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  <script src="main.js"></script>
+
+  <!-- <script src="require.js"></script> -->
+  <!-- <script src="validate.js"></script>
+  
+  <script src="bundle.js"></script> -->
+
+  <script src="mainController.js"></script>
+
 
 </head>
 
@@ -88,7 +95,9 @@
           <!-- Header -->
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><span id ="updateModalTitle"></span></h4>
+            <h4 class="modal-title">
+              <span id="updateModalTitle"></span>
+            </h4>
           </div>
 
           <!-- Body -->
@@ -99,35 +108,35 @@
               <div class="form-group">
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                  <input type="text" class="form-control" id="inputName" placeholder="Name" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="inputID" class="col-sm-2 control-label">Id</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputID" placeholder="ID">
+                  <input type="number" class="form-control" id="inputID" placeholder="ID" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="" class="col-sm-2 control-label">CGPA</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputCgpa" placeholder="CGPA">
+                  <input type="number" class="form-control" id="inputCgpa" placeholder="CGPA" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="inputBirthDay" class="col-sm-2 control-label">Birth Day</label>
                 <div class="col-sm-10">
-                  <input type="date" class="form-control" id="inputBirthDay" placeholder="Birth Day">
+                  <input type="date" class="form-control" id="inputBirthDay" placeholder="Birth Day" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="inputcontactNumber" class="col-sm-2 control-label">Cell Number</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" id="inputcontactNumber" placeholder="Cell Number">
+                  <input type="number" class="form-control" id="inputcontactNumber" placeholder="Cell Number" required>
                 </div>
               </div>
 
@@ -140,7 +149,7 @@
           <div class="modal-footer">
             <!-- Cancel -->
             <button id="cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <!-- Save button          onclick="saveUser()"  -->
+            <!-- Save button -->
             <button id="updateConfirmation" type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
             <button id="saveConfirmation" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
           </div>
