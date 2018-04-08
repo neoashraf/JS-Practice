@@ -48,3 +48,52 @@ calculator.read();
 
 console.log( calculator.sum() );
 console.log( calculator.mul() );
+
+// create a accumulator
+function Accumulator(startingValue){
+    this.value =  startingValue;
+    this.read = function (){
+        this.value += +prompt('How much you want ot add?',0);
+    }
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+console.log(accumulator.value);
+
+//
+function Calculator() {
+    
+    let methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b
+    };
+  
+    this.calculate = function(str) {
+  
+      let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2]
+  
+      if (!methods[op] || isNaN(a) || isNaN(b)) {
+        return NaN;
+      }
+  
+      return methods[op](a, b);
+    }
+  
+    this.addMethod = function(name, func) {
+      methods[name] = func;
+    }
+}
+
+
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 + 3");
+console.log( result ); 
